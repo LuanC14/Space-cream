@@ -1,0 +1,211 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  max-height: 100vh;
+  font-family: "Staatliches", cursive;
+  background: #eff1ff;
+}
+
+:root {
+  --fs-large: 2.5rem;
+  --fs-medium: 1.25rem;
+  --fs-small: 1rem;
+}
+
+.page {
+  text-align: center;
+}
+
+header {
+  background: #8e9aaf;
+  padding-bottom: 1.875rem;
+}
+
+header svg {
+  margin: 2rem auto;
+  animation: rotation 3s normal;
+}
+
+header h1 {
+  background: #cbc0d3;
+  padding: 8px 0;
+
+  font-size: var(--fs-large);
+  color: #ffffff;
+  line-height: 2.125rem;
+  letter-spacing: 0.05em;
+  font-weight: 400;
+  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.header-title {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  color: #ffffff;
+  font-size: var(--fs-small);
+  line-height: 1.25rem;
+  width: 17.1875rem;
+  margin: 2rem auto 0;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  display: none;
+}
+
+main {
+  max-width: 24rem;
+  padding: 0 1.5rem;
+  margin: 0 auto;
+
+  display: grid;
+  justify-content: center;
+}
+
+.main-title {
+  margin-top: 1.25rem;
+  font-family: "Palanquin", sans-serif;
+  color: #23053a;
+  font-size: var(--fs-small);
+  line-height: 15px;
+
+  width: 20rem;
+  margin-bottom: 3.9375rem;
+}
+
+.images-cream {
+  display: grid;
+  gap: 2rem;
+}
+
+.images-cream p {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+
+  font-size: var(--fs-medium);
+  color: #4a4e69;
+  text-align: center;
+
+  background: #feeafa;
+  border-radius: 1.25rem;
+  padding: 2px 1.4375rem;
+
+  animation: appear-reverse 2s forwards;
+}
+
+.lg-image {
+  position: relative;
+  height: 28.125rem;
+}
+
+.sm-image {
+  position: relative;
+  height: 15.625rem;
+}
+
+.images-cream div img {
+  width: 20rem;
+  max-height: 100%;
+
+  object-fit: cover;
+  border-radius: 1.25rem;
+
+  animation: appear 2s forwards;
+}
+
+nav {
+  font-family: "Open Sans";
+  font-size: var(--fs-small);
+  line-height: 1.75rem;
+  text-align: center;
+
+  color: #4a4e69;
+  display: none;
+}
+
+nav a {
+  font-weight: bold;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+@keyframes appear-reverse {
+  0% {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotateX(360deg) rotateY(-90deg);
+  }
+}
+
+@media (min-width: 769px) {
+  .page {
+    display: grid;
+    grid-template-areas: "A B";
+  }
+
+  header {
+    width: 23.5625rem;
+  }
+
+  .header-title {
+    display: block;
+  }
+
+  main {
+    max-width: 56.4375rem;
+    padding: 4rem 0 2.875rem;
+    margin-left: 0;
+  }
+
+  .main-title {
+    display: none;
+  }
+
+  .images-cream {
+    display: grid;
+    padding: 0 5rem;
+    margin-bottom: 3.125rem;
+
+    grid-template-areas:
+      "ACAÍ SHAKE"
+      "PICOLÉ SHAKE"
+      "PICOLÉ MASSA";
+  }
+
+  nav {
+    display: block;
+  }
+
+  main section div:nth-child(1) {
+    grid-area: ACAÍ;
+  }
+
+  main section div:nth-child(2) {
+    grid-area: SHAKE;
+  }
+
+  main section div:nth-child(3) {
+    grid-area: MASSA;
+  }
+
+  main section div:nth-child(4) {
+    grid-area: PICOLÉ;
+  }
+}
